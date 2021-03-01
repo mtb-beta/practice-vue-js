@@ -1,14 +1,15 @@
 Vue.component('comp-child', {
-  // テンプレートで受け取ったvalを使用
-  template: '<p>{{ val }}</p>',
-  // 受け取る属性名を指定
-  props: ['val']
+  template: '<li>{{ name }} HP.{{ hp }}</li>',
+  props: ['name', 'hp']
 })
 
 new Vue({
   el: '#app',
   data: {
-    valueA: 'これは子A',
-    valueB: 'これは子B'
+    list: [
+      { id: 1, name: 'スライム', hp: 100 },
+      { id: 2, name: 'ゴブリン', hp: 200 },
+      { id: 3, name: 'ドラゴン', hp: 500 }
+    ]
   }
 })

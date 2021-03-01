@@ -7,8 +7,12 @@
 </head>
 <body>
 <div id="app">
-<comp-child :val="valueA"></comp-child>
-<comp-child :val="valueB"></comp-child>
+<ul>
+  <comp-child v-for="item in list"
+    v-bind:key="item.id"
+    v-bind:name="item.name"
+    v-bind:hp="item.hp"></comp-child>
+</ul>
 </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
