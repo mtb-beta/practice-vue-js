@@ -1,16 +1,10 @@
+Vue.component('comp-child', {
+  // テンプレートで受け取ったvalを使用
+  template: '<p>{{ val }}</p>',
+  // 受け取る属性名を指定
+  props: ['val']
+})
+
 new Vue({
   el: '#app',
-  data: {
-    list: []
-  },
-  watch: {
-    list: function () {
-      // 更新後のul要素の高さを取得できない…
-      console.log('通常:', this.$refs.list.offsetHeight)
-      // nextTickを使えばできる！
-      this.$nextTick(function () {
-        console.log('nextTick:', this.$refs.list.offsetHeight)
-      })
-    }
-  }
 })

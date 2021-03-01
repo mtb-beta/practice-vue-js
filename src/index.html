@@ -7,10 +7,8 @@
 </head>
 <body>
 <div id="app">
-<button v-on:click="list.push(list.length+1)">追加</button>
-<ul ref="list">
-  <li v-for="item in list">{{ item }}</li>
-</ul>
+<comp-child val="これは子A"></comp-child>
+<comp-child val="これは子B"></comp-child>
 </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
