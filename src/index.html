@@ -6,16 +6,10 @@
   <link href="main.css" rel="stylesheet">
 </head>
 <body>
-  <div id="app">
-    <ul>
-      <li v-for="item in list"
-        v-bind:key="item.id"
-        v-bind:class="{ tuyoi: item.hp > 300 }">
-        ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}
-        <span v-if="item.hp > 300">つよい！</span>
-      </li>
-    </ul>
-  </div>
+<div id="app">
+180 度は {{ 180 | radian | round }} ラジアンだよ
+</div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
   <script src="main.js"></script>

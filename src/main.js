@@ -1,10 +1,13 @@
 new Vue({
   el: '#app',
-  data: {
-    list: [
-      { id: 1, name: 'スライム', hp: 100 },
-      { id: 2, name: 'ゴブリン', hp: 200 },
-      { id: 3, name: 'ドラゴン', hp: 500 }
-    ]
+  filters: {
+    // 小数点以下を第2位に丸めるフィルタ
+    round: function (val) {
+      return Math.round(val * 100) / 100
+    },
+    // 度からラジアンに変換するフィルタ
+    radian: function (val) {
+      return val * Math.PI / 180
+    }
   }
 })
