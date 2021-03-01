@@ -7,12 +7,17 @@
 </head>
 <body>
   <div id="app">
-    <button v-on:click="show=!show">切り替え</button>
-    <transition>
-      <p v-if="show">Hello Vue.js!</p>
-    </transition>
+    <ul>
+      <li v-for="item in list"
+        v-bind:key="item.id"
+        v-bind:class="{ tuyoi: item.hp > 300 }">
+        ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}
+        <span v-if="item.hp > 300">つよい！</span>
+      </li>
+    </ul>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
