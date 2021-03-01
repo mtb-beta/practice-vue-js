@@ -1,13 +1,16 @@
 new Vue({
   el: '#app',
-  filters: {
-    // 小数点以下を第2位に丸めるフィルタ
-    round: function (val) {
-      return Math.round(val * 100) / 100
-    },
-    // 度からラジアンに変換するフィルタ
-    radian: function (val) {
-      return val * Math.PI / 180
+  data: {
+    list: []
+  },
+  watch: {
+    list: function () {
+      // 更新後のul要素の高さを取得できない…
+      console.log('通常:', this.$refs.list.offsetHeight)
+      // nextTickを使えばできる！
+      this.$nextTick(function () {
+        console.log('nextTick:', this.$refs.list.offsetHeight)
+      })
     }
   }
 })

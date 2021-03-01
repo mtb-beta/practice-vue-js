@@ -7,7 +7,10 @@
 </head>
 <body>
 <div id="app">
-180 度は {{ 180 | radian | round }} ラジアンだよ
+<button v-on:click="list.push(list.length+1)">追加</button>
+<ul ref="list">
+  <li v-for="item in list">{{ item }}</li>
+</ul>
 </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
